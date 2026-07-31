@@ -3,6 +3,49 @@
 @section('title', 'Laporan Analisis')
 
 @section('content')
+<!-- Statistical Cards for Pimpinan -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-lg">
+        <div>
+            <p class="text-xs font-medium text-gray-400">Total Pemeriksaan</p>
+            <h3 class="text-2xl font-bold text-white mt-1">{{ $totalPemeriksaan }}</h3>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
+            <i class="fas fa-notes-medical text-purple-400 text-base"></i>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-lg">
+        <div>
+            <p class="text-xs font-medium text-gray-400">Status Normal</p>
+            <h3 class="text-2xl font-bold text-teal-400 mt-1">{{ $totalNormal }}</h3>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-teal-500/15 border border-teal-500/20 flex items-center justify-center">
+            <i class="fas fa-check-circle text-teal-400 text-base"></i>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 border border-red-900/40 rounded-2xl p-4 flex items-center justify-between shadow-lg">
+        <div>
+            <p class="text-xs font-medium text-gray-400">Stunting ({{ $stuntingPercentage }}%)</p>
+            <h3 class="text-2xl font-bold text-red-400 mt-1">{{ $totalStunting }}</h3>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/20 flex items-center justify-center">
+            <i class="fas fa-triangle-exclamation text-red-400 text-base"></i>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-lg">
+        <div>
+            <p class="text-xs font-medium text-gray-400">Gizi Buruk / Lebih</p>
+            <h3 class="text-2xl font-bold text-amber-400 mt-1">{{ $totalGiziBuruk + $totalGiziLebih }}</h3>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center">
+            <i class="fas fa-chart-line text-amber-400 text-base"></i>
+        </div>
+    </div>
+</div>
+
 <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl">
     <div class="flex justify-between items-center mb-6">
         <div>
